@@ -41,6 +41,11 @@
       text-align: center;
       }
 	  #legalText{
+		  background-color:rgba(10,10,10,.3);
+		  top: 20%;
+		  position:fixed;
+		  width: 40%;
+		  left:30%;
 		  color: #2a9fd6;
 	  }
 	  a{
@@ -49,4 +54,16 @@
       }
 	  a:link {
     text-decoration: none;
+	  }
+	  a:hover{
+      text-decoration: underline;
+      }
+	  #github{
+	  position: fixed;
+      bottom: 1%;
+      width: -webkit-fit-content;
+      right: 20px;
+      color: white;
+      font-size: 15px;
+      text-align: right;
 	  }

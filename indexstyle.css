@@ -174,3 +174,12 @@ video#bgvid {
 	  .options:hover{
 	  background-color: #167C9E; 
 	  }
+	  	  #github{
+	  position: fixed;
+      bottom: 1%;
+      width: -webkit-fit-content;
+      right: 20px;
+      color: white;
+      font-size: 15px;
+      text-align: right;
+	  }

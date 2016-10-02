@@ -9,7 +9,7 @@ document.getElementById("mass").innerHTML = wormhole+" Million Kg";
 // it checks if the wormhole collapsed or if it went a different stage
 // and updates the stage accordingly.
 function update(){
-	if(wormhole < 0){
+	if(wormhole <= 0){
 		stage = "Collapsed!";
 		if(!otherside.length==0){
 			alert("you fucked up!");
