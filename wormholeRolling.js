@@ -18,6 +18,7 @@ function update(){
 			alert("you succesfully rolled the hole!")
 			alert(shipsUsed)
 		}
+		reset();
 	}else{
 	if(wormhole < startMass*0.1){
 		stage = "Stage 3"
