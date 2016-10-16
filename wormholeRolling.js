@@ -1,6 +1,7 @@
 var otherside = [];
 var shipsUsed = ["Ships used: "];
 var stage = "Stage 1";
+var selectedWormhole = 1800;
 var wormhole = Math.round(1800+Math.random()*400);
 var startMass = wormhole;
 document.getElementById("stageWormhole").innerHTML = stage;
@@ -59,7 +60,7 @@ function displayMass(){
 }
 function reset(){
 	stage = "Stage 1";
-	wormhole = Math.round(1800+Math.random()*400);
+	wormhole = Math.round(selectedWormhole*0.9+Math.random()*(selectedWormhole*0.2));
 	otherside = [];
 	shipsUsed = [];
 	update();
@@ -69,24 +70,35 @@ function someActivity(){
 	update();
 }
 function showInformation(){
-	document.getElementById("information").style.visibility="visible";
+	document.getElementById("information").style.top=("0px");
 }
 function hideInformation(){
-	document.getElementById("information").style.visibility="hidden";
+	document.getElementById("information").style.top=("-188px");
 }
 
 function foldOutExtra(){
 	document.getElementById("extraBar").style.left = ("0px");
 	document.getElementById("extraBar").style.width = ("180px");
+	document.getElementById("extraBarText").style.transform = ("rotate(0deg)");
+	document.getElementById("extraBarText").style.WebkitTransformOrigin = ("rotate(0deg)");
+	document.getElementById("extraBarText").style.webkitTransform = ("rotate(0deg)");
+
 }
 function foldInExtra(){
-	document.getElementById("extraBar").style.left = ("-180px");
-	document.getElementById("extraBar").style.width = ("360px");
+	document.getElementById("extraBar").style.left = ("-190px");
+	document.getElementById("extraBar").style.width = ("410px");
+	document.getElementById("extraBarText").style.transform = ("rotate(90deg)");
+	document.getElementById("extraBarText").style.WebkitTransformOrigin = ("rotate(90deg)");
+	document.getElementById("extraBarText").style.webkitTransform = ("rotate(90deg)");
 }
 
 
 
-
+function setWormholeSize(mass){
+	selectedWormhole = mass;
+	reset();
+	update();
+}
 
 
 function hotHiggs(){

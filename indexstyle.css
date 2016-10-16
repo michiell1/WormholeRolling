@@ -19,16 +19,15 @@ video#bgvid {
       position: fixed;
       text-align:right;
       right: 0px;
-      top: 0px;
+      top: -188px;
       width: -webkit-fit-content;
-      background-color:rgba(10,10,10,.8);
+      background-color:rgba(10,10,10,.4);
       height: -webkit-fit-content;
-      visibility: hidden;
+	  transition-duration: 1s;
       }
 	  
       #cheatSheet{
-      visibility: visible;
-      background-color:rgba(10,10,10,.8);
+      background-color:rgba(10,10,10,.2);
       text-align: center;
       height: 50px;
       }
@@ -171,7 +170,7 @@ video#bgvid {
 	  #extraBar{
 		height: -webkit-fit-content;
 		left: -190px;
-		width: 380px;
+		width: 410px;
 		top: 30%;
 		position: fixed;
 		transition-duration: 1s;
@@ -215,8 +214,11 @@ video#bgvid {
 	  }
 	  #extraBarText{
 		text-align: center;
-		left: 30px;
 		width: 100%;
-		position: relative;
-		  
+		position: absolute;
+		left: 0px;
+		-ms-transform: rotate(90deg); /* IE 9 */
+		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+		transform: rotate(90deg);
+		transition-duration: 1s;
 	  }
