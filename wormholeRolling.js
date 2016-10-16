@@ -75,6 +75,14 @@ function hideInformation(){
 	document.getElementById("information").style.visibility="hidden";
 }
 
+function foldOutExtra(){
+	document.getElementById("extraBar").style.left = ("0px");
+	document.getElementById("extraBar").style.width = ("180px");
+}
+function foldInExtra(){
+	document.getElementById("extraBar").style.left = ("-180px");
+	document.getElementById("extraBar").style.width = ("360px");
+}
 
 
 

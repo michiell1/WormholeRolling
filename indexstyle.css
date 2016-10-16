@@ -166,7 +166,37 @@ video#bgvid {
 		transition-duration: 0.4s;
 		padding: 0;
 		top: 0px;
-		position: static;
+		position: fixed;
+	  }
+	  #extraBar{
+		height: -webkit-fit-content;
+		left: -190px;
+		width: 380px;
+		top: 30%;
+		position: fixed;
+		transition-duration: 1s;
+		-webkit-transition-duration: 1s; /* Safari */
+		font-family: Arial;
+		color: #ffffff;
+	  }
+	  
+	  .extra{
+		font-family: Arial;
+		color: #ffffff;
+		font-size: 20px;
+		background-color:rgba(10,10,10,0.4);
+		width: 170px;
+		height: 50px;
+		z-index: 50;
+		text-decoration: none;
+		border: none;
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+		padding: 0;
+		left: 10px;
+		top: 2px;
+		position: relative;
+		
 	  }
 	  #options{
 	  z-index: 50;
@@ -174,7 +204,7 @@ video#bgvid {
 	  .options:hover{
 	  background-color: #167C9E; 
 	  }
-	  	  #github{
+	  #github{
 	  position: fixed;
       bottom: 1%;
       width: -webkit-fit-content;
@@ -182,4 +212,11 @@ video#bgvid {
       color: white;
       font-size: 15px;
       text-align: right;
+	  }
+	  #extraBarText{
+		text-align: center;
+		left: 30px;
+		width: 100%;
+		position: relative;
+		  
 	  }

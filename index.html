@@ -3,7 +3,7 @@
    <head>
    <link rel="stylesheet" type="text/css" href="indexStyle.css">
    </head>
-   <body text=2a9fd6>
+   <body text="2a9fd6">
       <div class="videoContent">
          <video id="bgvid" autoplay="" loop="" class="videoBackground">
             <source src="https://beta.eve-kill.net/themes/zkillboard/video/stargate_01.mp4" type="video/mp4">
@@ -66,11 +66,18 @@
             Ships in the nullsec
          </ul>
 		 <div id="options">
-			<button onclick="reset()"class="options">reset</button><br>
-			<button onclick="someActivity()"class="options">make up some activity</button><br>
-			<button id="massButton"onclick="displayMass()"class="options">show mass</button>
+			<button onclick="reset()"class="options">reset</button>
+			<button onclick="someActivity()"class="options" style="left:170px">make up some activity</button>
+			<button id="massButton"onclick="displayMass()"class="options" style="left:340px">show mass</button>
 		 </div>
-      </div>
+      <div id = "extraBar" onmouseout="foldInExtra()" onmouseover="foldOutExtra()">
+	  <font id="extraBarText" size = "5"> wh switcher </font><br>
+	  <br><button class="extra"> 300.000.000 </button>
+	  <br><button class="extra"> 200.000.000 </button>
+	  <br><button class="extra"> 100.000.000</button>
+	  <br><button class="extra"> 75.000.000</button>
+	  <br><button class="extra"> 50.000.000</button>
+	  </div>
    </body>
    <footer>
       <div id="copyright">
