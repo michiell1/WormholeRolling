@@ -17,7 +17,6 @@ function update(){
 		}
 		if(otherside.length==0){
 			alert("you succesfully rolled the hole!")
-			alert(shipsUsed)
 		}
 		reset();
 	}else{
@@ -115,7 +114,7 @@ function hotHiggs(){
 	if(wormhole > 0 ){
 	wormhole -= 297;
 	otherside.push("HiggsBS");
-	shipsUsed.push("HiggsBS");
+	shipsUsed.push("HotHiggsBS");
 	update();
 	}
 }
@@ -123,7 +122,7 @@ function coldHiggs(){
 		if(wormhole > 0 ){
 	wormhole -= 197;
 	otherside.push("HiggsBS");
-	shipsUsed.push("HiggsBS");
+	shipsUsed.push("ColdHiggsBS");
 	update();
 		}
 }
@@ -131,7 +130,7 @@ function hotBattleship(){
 		if(wormhole > 0 ){
 	wormhole -= 150;
 	otherside.push("Battleship");
-	shipsUsed.push("Battleship");
+	shipsUsed.push("HotBattleship");
 	update();
 		}
 }
@@ -139,7 +138,7 @@ function coldBattleship(){
 		if(wormhole > 0 ){
 	wormhole -= 100;
 	otherside.push("Battleship");
-	shipsUsed.push("Battleship");
+	shipsUsed.push("ColdBattleship");
 	update();
 		}
 	}
@@ -147,7 +146,7 @@ function bubbleHic(){
 	if(wormhole > 0 ){
 	wormhole -= 1;
 	otherside.push("Hic");
-	shipsUsed.push("Hic");
+	shipsUsed.push("BubbleHic");
 	update();
 	}
 }
@@ -155,7 +154,7 @@ function hotHic(){
 	if(wormhole > 0 ){
 	wormhole -= 120;
 	otherside.push("Hic");
-	shipsUsed.push("Hic");
+	shipsUsed.push("HotHic");
 	update();
 	}
 }
@@ -172,6 +171,7 @@ function hotHiggsBack(){
 		if(wormhole > 0 ){
 	if(otherside.includes("HiggsBS")){
 		wormhole -= 297;
+		shipsUsed.push("HotHiggsBS");
 		index = otherside.indexOf("HiggsBS");
 		if (index > -1) {
 		otherside.splice(index, 1);
@@ -184,6 +184,7 @@ function coldHiggsBack(){
 		if(wormhole > 0 ){
 	if(otherside.includes("HiggsBS")){
 		wormhole -= 197;
+		shipsUsed.push("ColdHiggsBS");
 		index = otherside.indexOf("HiggsBS");
 		if (index > -1) {
 		otherside.splice(index, 1);
@@ -196,6 +197,7 @@ function hotBattleshipBack(){
 		if(wormhole > 0 ){
 	if(otherside.includes("Battleship")){
 		wormhole -= 150;
+		shipsUsed.push("HotBattleship");
 		index = otherside.indexOf("Battleship");
 		if (index > -1) {
 		otherside.splice(index, 1);
@@ -208,6 +210,7 @@ function coldBattleshipBack(){
 		if(wormhole > 0 ){
 	if(otherside.includes("Battleship")){
 		wormhole -= 100;
+		shipsUsed.push("ColdBattleship");
 		index = otherside.indexOf("Battleship");
 		if (index > -1) {
 		otherside.splice(index, 1);
@@ -220,6 +223,7 @@ function bubbleHicBack(){
 		if(wormhole > 0 ){
 	if(otherside.includes("Hic")){
 		wormhole -= 1;
+		shipsUsed.push("BubbleHic");
 		index = otherside.indexOf("Hic");
 		if (index > -1) {
 		otherside.splice(index, 1);
@@ -232,6 +236,7 @@ function hotHicBack(){
 		if(wormhole > 0 ){
 	if(otherside.includes("Hic")){
 		wormhole -= 120;
+		shipsUsed.push("HotHic");
 		index = otherside.indexOf("Hic");
 		if (index > -1) {
 		otherside.splice(index, 1);
@@ -244,6 +249,7 @@ function normalCruiserBack(){
 		if(wormhole > 0 ){
 	if(otherside.includes("normalCruiser")){
 		wormhole -= 10;
+		shipsUsed.push("normalCruiser");
 		index = otherside.indexOf("normalCruiser");
 		if (index > -1) {
 		otherside.splice(index, 1);
