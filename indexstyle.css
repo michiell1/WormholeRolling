@@ -120,13 +120,22 @@ video#bgvid {
 	  z-index: -1;
 	  top: 15%;
 	  position: fixed;
-	  width: 50%;
-	  left: 25%;
+	  width: 10%;
+	  left: 40%;
 	  text-align: center;
 	  font-size: 20px;
 	  font-family: Arial;
 	  }
-	  
+	  #shipsJumped{
+	  z-index: -1;
+	  top: 15%;
+	  position: fixed;
+	  width: 10%;
+	  left: 50%;
+	  text-align: center;
+	  font-size: 20px;
+	  font-family: Arial;
+	  }
 	  #leftButtons{
 	  left: 0px;
 	  width: -webkit-fit-content;
@@ -199,6 +208,9 @@ video#bgvid {
 	  }
 	  #options{
 	  z-index: 50;
+	  }
+	  .extra:hover{
+	   background-color: #167C9E; 
 	  }
 	  .options:hover{
 	  background-color: #167C9E; 

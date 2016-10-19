@@ -1,5 +1,5 @@
 var otherside = [];
-var shipsUsed = ["Ships used: "];
+var shipsUsed = [];
 var stage = "Stage 1";
 var selectedWormhole = 1800;
 var wormhole = Math.round(1800+Math.random()*400);
@@ -32,6 +32,7 @@ function update(){
 	document.getElementById("stageWormhole").innerHTML = stage;
 	document.getElementById("mass").innerHTML = wormhole+ " Million Kg";
 	updateOtherSide();
+	updateShipsJumped();
 }
 var shipString = function(){
 	var a = "";
@@ -48,6 +49,15 @@ function updateOtherSide(){
 		list1 += "<br>"
 	}
 	document.getElementById("shipsOnOtherSide").innerHTML = list1;
+}
+function updateShipsJumped(){
+		var list = document.createElement("LI");
+	var list1 = "ships Jumped<br>";
+	for(i = 0; i < shipsUsed.length; i++){
+		list1 += shipsUsed[i];
+		list1 += "<br>"
+	}
+	document.getElementById("shipsJumped").innerHTML = list1;
 }
 function displayMass(){
 	if(document.getElementById("mass").style.visibility == "hidden"){
@@ -242,7 +252,6 @@ function normalCruiserBack(){
 	}
 	}
 }
-
 
 
 
