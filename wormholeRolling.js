@@ -4,6 +4,7 @@ var stage = "Stage 1";
 var selectedWormhole = 1800;
 var wormhole = Math.round(1800+Math.random()*400);
 var startMass = wormhole;
+var massList = ["hotHiggsBS", 297, "coldHiggsBS", 197, "hotBattleship", 150, "coldBattleship", 100, "hotHic", 120, "normalCruiser", 10, "bubbleHic", 1];
 document.getElementById("stageWormhole").innerHTML = stage;
 document.getElementById("mass").innerHTML = wormhole+" Million Kg";
 // this function updates all information off the wormhole
@@ -109,160 +110,47 @@ function setWormholeSize(mass){
 	update();
 }
 
-
-function hotHiggs(){
-	if(wormhole > 0 ){
-	wormhole -= 297;
-	otherside.push("HiggsBS");
-	shipsUsed.push("HotHiggsBS");
-	update();
-	}
-}
-function coldHiggs(){
-		if(wormhole > 0 ){
-	wormhole -= 197;
-	otherside.push("HiggsBS");
-	shipsUsed.push("ColdHiggsBS");
-	update();
-		}
-}
-function hotBattleship(){
-		if(wormhole > 0 ){
-	wormhole -= 150;
-	otherside.push("Battleship");
-	shipsUsed.push("HotBattleship");
-	update();
-		}
-}
-function coldBattleship(){
-		if(wormhole > 0 ){
-	wormhole -= 100;
-	otherside.push("Battleship");
-	shipsUsed.push("ColdBattleship");
-	update();
+function getMass(shipType){
+	for(i =0; i < massList.length; i++){
+		if(shipType == massList[i]){
+			return massList[i+1];
 		}
 	}
-function bubbleHic(){
-	if(wormhole > 0 ){
-	wormhole -= 1;
-	otherside.push("Hic");
-	shipsUsed.push("BubbleHic");
-	update();
+	return undefined;
+} 
+function hotToShip(shipType){
+	if(shipType == "hotHiggsBS" || shipType == "coldHiggsBS"){
+		return "HiggsBS";
 	}
-}
-function hotHic(){
-	if(wormhole > 0 ){
-	wormhole -= 120;
-	otherside.push("Hic");
-	shipsUsed.push("HotHic");
-	update();
+	if(shipType == "hotBattleship" || shipType == "coldBattleship"){
+	return "Battleship";
 	}
-}
-function normalCruiser(){
-	if(wormhole > 0 ){
-	wormhole -= 10;
-	otherside.push("normalCruiser");
-	shipsUsed.push("normalCruiser");
-	update();
+	if(shipType == "hotHic" || shipType == "bubbleHic"){
+	return "Hic";
 	}
+	return shipType;
 }
-// ships going back
-function hotHiggsBack(){
-		if(wormhole > 0 ){
-	if(otherside.includes("HiggsBS")){
-		wormhole -= 297;
-		shipsUsed.push("HotHiggsBS");
-		index = otherside.indexOf("HiggsBS");
-		if (index > -1) {
-		otherside.splice(index, 1);
-		}
+function shipOut(shipType){
+	if(wormhole > 0){
+		wormhole -= getMass(shipType);
+		shipsUsed.push(shipType);
+		otherside.push(hotToShip(shipType));
 		update();
 	}
-		}
 }
-function coldHiggsBack(){
-		if(wormhole > 0 ){
-	if(otherside.includes("HiggsBS")){
-		wormhole -= 197;
-		shipsUsed.push("ColdHiggsBS");
-		index = otherside.indexOf("HiggsBS");
-		if (index > -1) {
-		otherside.splice(index, 1);
+function shipBack(shipType){
+	if(wormhole > 0){
+		if(otherside.includes(hotToShip(shipType))){
+			wormhole -= getMass(shipType);
+			shipsUsed.push(shipType);
+			index = otherside.indexOf(hotToShip(shipType));
+			if (index > -1) {
+			otherside.splice(index, 1);
+			}
+			update();
 		}
-		update();
-	}
-		}
-}
-function hotBattleshipBack(){
-		if(wormhole > 0 ){
-	if(otherside.includes("Battleship")){
-		wormhole -= 150;
-		shipsUsed.push("HotBattleship");
-		index = otherside.indexOf("Battleship");
-		if (index > -1) {
-		otherside.splice(index, 1);
-		}
-		update();
-	}
-		}
-}
-function coldBattleshipBack(){
-		if(wormhole > 0 ){
-	if(otherside.includes("Battleship")){
-		wormhole -= 100;
-		shipsUsed.push("ColdBattleship");
-		index = otherside.indexOf("Battleship");
-		if (index > -1) {
-		otherside.splice(index, 1);
-		}
-		update();
-	}
-		}
-}
-function bubbleHicBack(){
-		if(wormhole > 0 ){
-	if(otherside.includes("Hic")){
-		wormhole -= 1;
-		shipsUsed.push("BubbleHic");
-		index = otherside.indexOf("Hic");
-		if (index > -1) {
-		otherside.splice(index, 1);
-		}
-		update();
-	}
-		}
-}
-function hotHicBack(){
-		if(wormhole > 0 ){
-	if(otherside.includes("Hic")){
-		wormhole -= 120;
-		shipsUsed.push("HotHic");
-		index = otherside.indexOf("Hic");
-		if (index > -1) {
-		otherside.splice(index, 1);
-		}
-		update();
-	}
 	}
 }
-function normalCruiserBack(){
-		if(wormhole > 0 ){
-	if(otherside.includes("normalCruiser")){
-		wormhole -= 10;
-		shipsUsed.push("normalCruiser");
-		index = otherside.indexOf("normalCruiser");
-		if (index > -1) {
-		otherside.splice(index, 1);
-		}
-		update();
-	}
-	}
-}
-
-
-
-
-
 
 
 
