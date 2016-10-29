@@ -19,17 +19,20 @@ video#bgvid {
       position: fixed;
       text-align:right;
       right: 0px;
-      top: -188px;
+      top: -146px;
       width: -webkit-fit-content;
-      background-color:rgba(10,10,10,.4);
+      
       height: -webkit-fit-content;
 	  transition-duration: 1s;
+	  font-family: Arial;
+	  color: #ffffff;
       }
-	  
       #cheatSheet{
-      background-color:rgba(10,10,10,.2);
+      
       text-align: center;
       height: 50px;
+	  font-family: Arial;
+	  color: #ffffff;
       }
 	  
       #signature{
@@ -93,7 +96,7 @@ video#bgvid {
       }
 	  
       #gameWrapper{
-	  top: 20%;
+	  top: 25%;
       position: fixed;
       left:25%;
 	  width: 50%;
@@ -118,7 +121,7 @@ video#bgvid {
 	}
 	  #shipsOnOtherSide{
 	  z-index: -1;
-	  top: 15%;
+	  top: 20%;
 	  position: fixed;
 	  width: 10%;
 	  left: 40%;
@@ -128,7 +131,7 @@ video#bgvid {
 	  }
 	  #shipsJumped{
 	  z-index: -1;
-	  top: 15%;
+	  top: 20%;
 	  position: fixed;
 	  width: 10%;
 	  left: 50%;
@@ -159,6 +162,8 @@ video#bgvid {
 	  .direction{
 	  font-weight: bold;
 	  font-family: Arial;
+	  size: 4;
+	  color: white;
 	  }
 	  .options{
 		font-family: Arial;

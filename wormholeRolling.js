@@ -1,12 +1,14 @@
 var otherside = [];
 var shipsUsed = [];
 var stage = "Stage 1";
-var selectedWormhole = 1800;
-var wormhole = Math.round(1800+Math.random()*400);
+var selectedWormhole = 2000;
+var wormhole = 0;
 var startMass = wormhole;
 var massList = ["hotHiggsBS", 297, "coldHiggsBS", 197, "hotBattleship", 150, "coldBattleship", 100, "hotHic", 120, "normalCruiser", 10, "bubbleHic", 1];
 document.getElementById("stageWormhole").innerHTML = stage;
 document.getElementById("mass").innerHTML = wormhole+" Million Kg";
+document.getElementById("baseMass").innerHTML = "Base Mass: "+selectedWormhole;
+setWormholeSize(2000);
 // this function updates all information off the wormhole
 // it checks if the wormhole collapsed or if it went a different stage
 // and updates the stage accordingly.
@@ -21,16 +23,22 @@ function update(){
 		}
 		reset();
 	}else{
+	if(wormhole > startMass/2){
+		document.getElementById("stageWormhole").style.color = "#00ad0e";
+	}
 	if(wormhole < startMass*0.1){
+		document.getElementById("stageWormhole").style.color = "#ef2d2d";
 		stage = "Stage 3"
 	}else{
 		if(wormhole < startMass/2){
+			document.getElementById("stageWormhole").style.color = "#f4f733";
 			stage = "Stage 2";
 		}
 	}
 	}
 	document.getElementById("stageWormhole").innerHTML = stage;
 	document.getElementById("mass").innerHTML = wormhole+ " Million Kg";
+	document.getElementById("baseMass").innerHTML = "Base Mass: "+selectedWormhole;
 	updateOtherSide();
 	updateShipsJumped();
 }
@@ -73,6 +81,7 @@ function reset(){
 	wormhole = Math.round(selectedWormhole*0.9+Math.random()*(selectedWormhole*0.2));
 	otherside = [];
 	shipsUsed = [];
+	startMass = wormhole;
 	update();
 }
 function someActivity(){
@@ -83,7 +92,7 @@ function showInformation(){
 	document.getElementById("information").style.top=("0px");
 }
 function hideInformation(){
-	document.getElementById("information").style.top=("-188px");
+	document.getElementById("information").style.top=("-146px");
 }
 
 function foldOutExtra(){
